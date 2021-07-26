@@ -13,8 +13,17 @@ public partial class GameManager : SingletonMonoBehaviour<GameManager>
     IngameState m_ingameState = new IngameState();
     /// <summary>一時停止ステート</summary>
     PauseState m_pauseState = new PauseState();
+    /// <summary>リザルトステート</summary>
+    ResultState m_resultState = new ResultState();
     [SerializeField] GameObject m_startButton;
     [SerializeField] GameObject m_exitButton;
+    [SerializeField] Text m_timerText;
+    [SerializeField] Text m_resultText;
+    [SerializeField] GameObject m_player;
+    private float m_minute;
+    private float m_seconds;
+    private float m_decimal;
+    private float m_oldDecimal;
 
     private void Awake()
     {
