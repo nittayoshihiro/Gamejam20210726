@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     private bool isGround;
     void Start()
     {
-        //gameObject.AddComponent<Rigidbody2D>();
+        gameObject.AddComponent<Rigidbody2D>();
         m_rb = GetComponent<Rigidbody2D>();
         m_rb.gravityScale = m_GravityScale;
         m_rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -51,13 +51,13 @@ public class Player : MonoBehaviour
         float horizontal1 = 0.0f;
         if (left)
         {
-            horizontal1 += -1.0f;
-            this.transform.localScale = new Vector3(2, 2, 1);
+            horizontal1 = -1.0f;
+            this.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (right)
         {
-            horizontal1 += 1.0f;
-            this.transform.localScale = new Vector3(-2, 2, 1);
+            horizontal1 = 1.0f;
+            this.transform.localScale = new Vector3(-1, 1, 1);
         }
 
         Vector2 direction1 = Vector2.right * horizontal1;
