@@ -24,9 +24,9 @@ public partial class GameManager : SingletonMonoBehaviour<GameManager>
 
     public void Start()
     {
-        m_initializedState.SetStateID(GameStateID.Initialized);
-        m_ingameState.SetStateID(GameStateID.Ingame);
-        m_pauseState.SetStateID(GameStateID.Pause);
+        m_initializedState.SetStateID(GameManagerID.Initialized);
+        m_ingameState.SetStateID(GameManagerID.Ingame);
+        m_pauseState.SetStateID(GameManagerID.Pause);
 
         m_currentGameManagerBaseState = m_initializedState;
     }

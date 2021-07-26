@@ -17,6 +17,11 @@ public abstract class GameManagerBaseState
 {
     public GameManagerID gameManagerId { get; private set; } = GameManagerID.None;
 
+    public void SetStateID(GameManagerID setStateId)
+    {
+        gameManagerId = setStateId;
+    }
+
     /// <summary>
     /// ステートを開始した時に呼ばれる
     /// </summary>
