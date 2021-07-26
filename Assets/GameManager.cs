@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public partial class GameManager : SingletonMonoBehaviour<GameManager>
 {
@@ -12,6 +13,8 @@ public partial class GameManager : SingletonMonoBehaviour<GameManager>
     IngameState m_ingameState = new IngameState();
     /// <summary>一時停止ステート</summary>
     PauseState m_pauseState = new PauseState();
+    [SerializeField] GameObject m_startButton;
+    [SerializeField] GameObject m_exitButton;
 
     private void Awake()
     {
@@ -45,5 +48,15 @@ public partial class GameManager : SingletonMonoBehaviour<GameManager>
         m_currentGameManagerBaseState.OnExit(this,nextGameState);
         m_currentGameManagerBaseState = nextGameState;
         m_currentGameManagerBaseState.OnEnter(this, m_currentGameManagerBaseState);
+    }
+
+    public void StartButton()
+    {
+        ChangeGameState(m_ingameState);
+    }
+
+    public void ExitButton()
+    {
+        ChangeGameState(m_initializedState);
     }
 }

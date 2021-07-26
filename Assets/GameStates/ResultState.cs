@@ -4,24 +4,21 @@ using UnityEngine;
 
 public partial class GameManager
 {
-    /// <summary>
-    /// 初期化のステート
-    /// </summary>
-    public class InitializedState : GameManagerBaseState
+    public class ResultState: GameManagerBaseState
     {
         public override void OnEnter(GameManager owner, GameManagerBaseState prevbaseState)
         {
-
+            owner.m_exitButton.SetActive(true);
         }
 
         public override void OnUpdate(GameManager owner)
         {
-
+            
         }
 
         public override void OnExit(GameManager owner, GameManagerBaseState nextState)
         {
-            owner.m_startButton.SetActive(false);
+            owner.m_exitButton.SetActive(false);
         }
     }
 }
